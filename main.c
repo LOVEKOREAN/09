@@ -1,25 +1,33 @@
 #include <stdio.h> 
 #include <stdlib.h>
-#define SIZE 5
+#define SIZE 4
+
+void square_array(int a[],int size)
+{
+     int i;
+     
+     for(i=0;i<SIZE;i++)
+     a[i]=a[i]*a[i];
+}
+
+void print_array(int a[], int size)
+{
+     int i;
+     
+     for(i=0;i<SIZE;i++)
+      printf("%3d",a[i]);
+      printf("\n");
+
+}
 
 int main(int argc, char *argv[])
 {
-   int i;
-   int a[SIZE]={1,2,3,4,5};
-   int b[SIZE]={1,2,3,4,5};
-   int flag=0;
+   int list[SIZE]={1,2,3,4};
    
-   for(i=0;i<SIZE; i++)
-   {              
-   if(a[i]!=b[i])
-    {
-                  printf("배열은 다른 값을 가집니다.\n");
-                  flag=1;
-}
-   }
-   if(flag==0)
-    printf("배열은 같은 값을 가집니다.\n"); 
-    
+   print_array(list, SIZE); 
+   square_array(list, SIZE);
+   print_array(list, SIZE);
+   
   system("PAUSE");	
   return 0;
 }
